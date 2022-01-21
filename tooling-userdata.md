@@ -13,7 +13,7 @@ git clone https://github.com/Taiwolawal/ACS-project-config.git
 mkdir /var/www/html
 cp -R /tooling-1/html/*  /var/www/html/
 cd /tooling-1
-mysql -h acs-database.cdqpbjkethv0.us-east-1.rds.amazonaws.com -u ACSADMIN -p toolingdb < tooling-db.sql
+mysql -h acs-database.cbzlhilzcstn.us-east-2.rds.amazonaws.com -u ACSADMIN -p toolingdb < tooling-db.sql
 cd /var/www/html/
 touch healthstatus
 sed -i "s/$db = mysqli_connect('mysql.tooling.svc.cluster.local', 'admin', 'admin', 'tooling');/$db = mysqli_connect('acs-database.cbzlhilzcstn.us-east-2.rds.amazonaws.com', 'ACSADMIN', 'password', 'toolingdb');/g" functions.php
